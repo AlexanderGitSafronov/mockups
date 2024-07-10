@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "SF-Pro", sans-serif;
+  color: #000;
+}
+body {
+  overflow-x: hidden;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+  position: relative;
+}
+.container__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/home/bg_home.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+h1 {
+  font-size: 54px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 64.4px;
+  color: #fff;
+  margin-top: 24px;
+}
+.bg_opasity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background: linear-gradient(
+    0deg,
+    rgba(32, 34, 40, 1) 0%,
+    rgba(32, 34, 40, 0) 100%
+  );
+}
+.main__wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__logo {
+  display: flex;
+  justify-content: center;
+}
+.main__text span {
+  display: inline-block;
+  color: #133d0b;
+  padding: 0px 6px;
+
+  position: relative;
+}
+.main__text span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(4deg);
+  background-color: rgba(204, 255, 0, 1);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.main__btns {
+  margin: 48px 0px;
+  background-color: #fff;
+  display: flex;
+  column-gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+}
+.main__btns button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.main__btns button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__desc p {
+  font-family: "AWhite", sans-serif;
+  text-align: center;
+  font-size: 19px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+  opacity: 50%;
+}
+
+.mainQr {
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  position: fixed;
+  left: 0px;
+  top: 100%;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 0);
+  padding: 20px; /* Внутренние отступы */
+}
+.mainQr__main {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 36px;
+}
+.mainQr p {
+  font-size: 34px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+.mainQr.act {
+  opacity: 1;
+  /* right: initial; */
+  top: 0px;
+  left: 0px;
+}
+.mainMenuWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px); /* Размытие фона за элементом */
+  -webkit-backdrop-filter: blur(10px); /* Для поддержки в Webkit-браузерах */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная рамка */
+
+  display: none;
+}
+.mainMenuWrapper.active {
+  display: block;
+}
+.mainQr_close {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 101;
+  cursor: pointer;
+  display: none;
+}
+.mainQr_close.active {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .mainQr_close::before,
+  .mainQr_close::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20.7px;
+    height: 4.6px;
+    background-color: #fff;
+    border-radius: 34.5px;
+    transform: rotate(50deg);
+    border: 1.5px solid #000;
+  }
+  .mainQr_close::after {
+    transform: rotate(-50deg);
+  } */
+.footer {
+  position: absolute;
+  z-index: 5;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  padding: 0px !important;
+}

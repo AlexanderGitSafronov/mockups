@@ -1,0 +1,20 @@
+.footer {
+  padding-bottom: 12px;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+}
+.footer__link {
+  display: flex;
+  column-gap: 12px;
+}
+.footer__wrapper span,
+.footer__wrapper a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 1);
+  opacity: 50%;
+}

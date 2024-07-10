@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "SF-Pro", sans-serif;
+  color: #fff;
+}
+body {
+  overflow-x: hidden;
+  background-color: rgba(32, 34, 40, 1);
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.header {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+.logo__text span {
+  font-size: 21px;
+  font-weight: 400;
+  font-family: "AWhite", sans-serif;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+.header__right_text span {
+  opacity: 50%;
+  font-size: 15px;
+  font-weight: 700;
+}
+.header__right button,
+.header__right button a {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainQr {
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  position: fixed;
+  left: 0px;
+  top: 100%;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 0);
+  padding: 20px; /* Внутренние отступы */
+}
+.mainQr__main {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 36px;
+}
+.mainQr p {
+  font-size: 34px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+.mainQr.act {
+  opacity: 1;
+  /* right: initial; */
+  top: 0px;
+  left: 0px;
+}
+.mainMenuWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px); /* Размытие фона за элементом */
+  -webkit-backdrop-filter: blur(10px); /* Для поддержки в Webkit-браузерах */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная рамка */
+
+  display: none;
+}
+.mainMenuWrapper.active {
+  display: block;
+}
+.mainQr_close {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 101;
+  cursor: pointer;
+  display: none;
+}
+.mainQr_close.active {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .header__right_text {
+    display: none;
+  }
+}

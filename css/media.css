@@ -1,0 +1,23 @@
+@media (max-width: 500px) {
+  .bg {
+    background-position: center;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main__btns {
+    flex-direction: column;
+    row-gap: 16px;
+    width: 204px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 40.5px;
+  }
+  .mainQr_close {
+    top: 30px;
+    right: 30px;
+  }
+}
